@@ -1,24 +1,5 @@
-let playButton = document.getElementById("playButton");
-let playButtonClicksCounter = 0;
-let interval;
-let secondsElapsed = 0;
-let playStatus = true;
-let timer = 0;
-playButton.addEventListener("click", playOrPause);
-
-/* playButton.addEventListener("click", timer);
-
-function timer() {
-    playButtonClicksCounter++;
-    interval = setInterval(countTime, 1000);
-
-    console.log("hihi");
-}
-
-function countTime() {
-    secondsElapsed++;
-    console.log(secondsElapsed);
-} */
+let points = 0;
+let storedPoints = 0;
 
 
 function playOrPause() {
@@ -28,9 +9,19 @@ function playOrPause() {
         interval = setInterval(function () {
             console.log(secondsElapsed);
             secondsElapsed++;
+            points++;
         }, 1000);
 
     } else {
         clearInterval(interval);
     }
 }
+
+let storePointsInterval = setInterval(storePoints, 10000);
+
+function storePoints() {
+    storedPoints = points + parseInt(localStorage.getItem('storedPoints'));
+    localStorage.setItem('storedPoints', storedPoints.toString);
+    points = 0;
+}
+
