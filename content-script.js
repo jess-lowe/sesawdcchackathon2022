@@ -42,4 +42,3 @@ function storePoints() {
         // call update points display
     }
 }
-

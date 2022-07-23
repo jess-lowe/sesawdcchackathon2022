@@ -41,6 +41,14 @@ window.onload = function() {
         }
     }
 
+    let pointsInterval = setInterval(displayPoints, 10000);
+
+    function displayPoints(){
+        document.getElementById("points").innerHTML = localStorage.getItem('storedPoints') + " Points"; 
+        console.log("hi" + document.getElementById("points"));
+        console.log("points are" + localStorage.getItem('storedPoints'));
+    }
+    
     function toggleWear(element) {
         if (element.classList.contains("hidden")) {
             element.classList.remove("hidden");
