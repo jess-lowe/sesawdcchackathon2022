@@ -1,36 +1,32 @@
-let playButton = document.getElementById("playButton");
-let playButtonClicksCounter = 0;
+// initialise points
+let newPoints = 0;
+let storedPoints;
+
+if (localStorage.getItem('storedPoints') == null) {
+    localStorage.setItem('storedPoints', "0");
+}
+
 let interval;
-let secondsElapsed = 0;
-let playStatus = true;
-let timer = 0;
-playButton.addEventListener("click", playOrPause);
 
-/* playButton.addEventListener("click", timer);
+// get primary video player element
+let video = document.getElementById("primaryVideo");
 
-function timer() {
-    playButtonClicksCounter++;
-    interval = setInterval(countTime, 1000);
-
-    console.log("hihi");
+video.onplay = (event) => {
+    interval = setInterval(function () {
+        console.log(newPoints);
+        newPoints++;
+    }, 1000);
 }
 
-function countTime() {
-    secondsElapsed++;
-    console.log(secondsElapsed);
-} */
-
-
-function playOrPause() {
-    playStatus = !playStatus;
-    if (playStatus) {
-        //increment timer every second
-        interval = setInterval(function () {
-            console.log(secondsElapsed);
-            secondsElapsed++;
-        }, 1000);
-
-    } else {
-        clearInterval(interval);
-    }
+video.onpause = (event) => {
+    clearInterval(interval);
 }
+
+let storePointsInterval = setInterval(storePoints, 10000);
+
+function storePoints() {
+    storedPoints = newPoints + parseInt(localStorage.getItem('storedPoints'));
+    localStorage.setItem('storedPoints', storedPoints.toString());
+    newPoints = 0;
+}
+
