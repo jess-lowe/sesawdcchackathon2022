@@ -30,10 +30,18 @@
   
   .grid-item {
     background-color: #5C5C5C;
-    padding: 25px;
+    width: 70px;
+    height: 70px;
     font-size: 10px;
     text-align: center;
     border-radius: 10px;
+  }
+
+  .grid-item img {
+    width: 60px;
+    height: 60px;
+    margin-top: 5px;
+    object-fit: contain;  
   }
 
 
