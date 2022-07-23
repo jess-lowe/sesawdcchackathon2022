@@ -10,8 +10,14 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+#points {
+  color: white;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .beanBody {
-  margin-top: 50px;
+  margin-top: 3px;
   margin-left: 25px;
   width: 250px;
   height: 200px;
@@ -19,12 +25,31 @@
   border-radius: 10px;
 }
 
-.bean {
+#bean {
   margin-left: 30px;
   width: 200px;
   height: 200px;
   position: relative;
   z-index: 1;
+  display: block;
+}
+
+#mrbean {
+  margin-left: 50px;
+  width: 120px;
+  height: 190px;
+  position: relative;
+  z-index: 1;
+  display: none;
+}
+
+.beanBody #shadow {
+  width: 100px;
+  height: auto;
+  display: block;
+  margin-left: 60px;
+  position: absolute;
+  margin-top: 135px;
 }
 
 .locked {
@@ -96,6 +121,7 @@
   grid-template-columns: auto auto auto;
   width: 250px;
   margin-top: 20px;
+  margin-left: 25px;
 }
 
 .grid-item,

@@ -25,7 +25,9 @@ window.onload = function() {
             // if item is locked
             if (document.getElementById(itemId).classList.contains("locked")) {
                 // if user has enough points then unlock item
-                let points = localStorage.getItem('storedPoints');
+                var point = document.getElementById("points");
+                const pt = point.textContent.split(" ");
+                points = parseInt(pt[0]);
                 console.log("points are" + localStorage.getItem('storedPoints'));
                 if (points >= wardrobePointUnlocks[itemId]) {
                     document.getElementById(itemId).classList.remove("locked");
@@ -39,92 +41,6 @@ window.onload = function() {
         }
     }
 
-//     // listen for clicks on wardrobe div
-// document.getElementById("wardrobe").onclick = (event) => {
-
-//     // if click wasn't on a grid item, return
-//     console.log(event.target.classList);
-//     if (!(event.target.tagName == "BUTTON" || event.target.tagName == "IMG")) {
-//         return;
-//     }
-
-//     // if item is currently locked
-//     if (event.target.classList.contains("locked")) {
-//         console.log("LOCKED UR POOR AF");
-//         // check if we can unlock it
-//         // if we can then remove class, store result in local storage
-//         // otherwise return i guess...
-//     }
-//     // toggleWear(event.target.classList.contains("hidden"));
-// };
-
-// // document.getElementById("cowboyhatbtn").onclick = (event) => {
-// //     // if item is currently locked
-// //     if (event.target.classList.includes("locked")) {
-// //         // check if we can unlock it
-// //         // if we can then remove class, store result in local storage
-// //         // otherwise return i guess...
-// //     }
-// //     toggleWear(event.target.classList.includes("hidden"));
-// // };
-
-// // document.getElementById("beaniebtn").onclick = function show() {
-
-// //     var x = document.getElementById('beanie');
-// //     console.log("HELLO")
-// //     if (x.style.display === "none") {
-// //         x.style.display = "block";
-// //         } else {
-// //         x.style.display = "none";
-// //     }
-    
-// // };
-
-// // document.getElementById("bowbtn").onclick = function show() {
-
-// //     var x = document.getElementById('bow');
-// //     // if (x.style.display === "none") {
-// //     //     x.style.display = "block";
-// //     //     } else {
-// //     //     x.style.display = "none";
-// //     // }
-    
-// // };
-
-// // document.getElementById("bunnybtn").onclick = function show() {
-
-// //     var x = document.getElementById('bunny');
-// //     // if (x.style.display === "none") {
-// //     //     x.style.display = "block";
-// //     //     } else {
-// //     //     x.style.display = "none";
-// //     // }
-    
-// // };
-
-// // document.getElementById("necklacebtn").onclick = function show() {
-
-// //     var x = document.getElementById('necklace');
-// //     // if (x.style.display === "none") {
-// //     //     x.style.display = "block";
-// //     //     } else {
-// //     //     x.style.display = "none";
-// //     // }
-    
-// // };
-
-// // document.getElementById("sockbtn").onclick = function show() {
-
-// //     var x = document.getElementById('sock');
-// //     // if (x.style.display === "none") {
-// //     //     x.style.display = "block";
-// //     //     } else {
-// //     //     x.style.display = "none";
-// //     // }
-    
-// // };
-
-
     function toggleWear(element) {
         if (element.classList.contains("hidden")) {
             element.classList.remove("hidden");
@@ -132,7 +48,31 @@ window.onload = function() {
             element.classList.add("hidden")
         }
         console.log(element)
-    }
+    }   
+    
+    // changes bean to mr bean after 10 clicks on the bean
+    let bean = document.getElementById("bean");
+
+    let count = 0;
+
+    bean.addEventListener("click", function () {
+        count += 1;
+
+        if (count == 10) {
+            bean.style.display = "none";
+            document.getElementById("mrbean").style.display = "block";
+            document.getElementById("shadow").style.display = "none";
+        }
+    });
+
+    document.getElementById("mrbean").addEventListener("click", function () {
+        bean.style.display = "block";
+        document.getElementById("mrbean").style.display = "none";
+        document.getElementById("shadow").style.display = "block";
+        count = 0;
+    })
+
 }
+
 
 
