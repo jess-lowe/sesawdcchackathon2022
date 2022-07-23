@@ -1,11 +1,14 @@
 ﻿body {
-    width: 372;
-    height: 620;
+    width: 30px;
+    height: 60px;
+    background-color: #1E1E1E;
 }
 
 .beanBody{
-    width: 326;
-    height: 297;
+    margin-top: 10vh;
+    margin-left: 8vw;
+    width: 400px;
+    height: 400px;
     background-color: #5C5C5C;
 }
  .grid-container{
