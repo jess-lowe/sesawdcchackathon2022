@@ -5,45 +5,54 @@
     <meta charset="utf-8" />
     <title>SCREENBEAN</title>
     <link rel="stylesheet" href="style.css" />
+    <script src = "script.js"></script>
   </head>
   <body>
+    
     <!-- contains the bean's body with will be dressed up' -->
-<<<<<<< HEAD
     <div class="beanBody"> 
-        <!-- <img class = "cowboyhat" src="images/cowboyhat.png" alt="Cowboy Hat">
-        <img class = "beanie" src="images/beanie.png" alt="Beanie">
-        <img class = "bow" src="images/bow.png" alt="Bow">
-        <img class = "bunny" src="images/bunny.png" alt="Bunny">
-        <img class = "necklace" src="images/necklace.png" alt="necklace">
-        <img class = "sock" src="images/sock.png" alt="Sock"> -->
+        <img id="cowboyhat" src="images/cowboyhat.png" alt="Cowboy Hat">
+        <img id="beanie" src="images/beanie.png" alt="Beanie">
+        <img id="bow" src="images/bow.png" alt="Bow">
+        <img id="bunny" src="images/bunny.png" alt="Bunny">
+        <img id= "necklace" src="images/necklace.png" alt="necklace">
+        <img id="sock" src="images/sock.png" alt="Sock">
+        <img class ="shadow" src="images/shadow.png" alt="Shadow" />
         <img class = "bean" src="images/bean.png" alt="Bean">
-=======
-    <div class="beanBody">
-      <img class="cowboyhat" src="images/cowboyhat.png" alt="Cowboy Hat" />
-      <img class="shadow" src="images/shadow.png" alt="Shadow" />
-      <img class="bean" src="images/bean.png" alt="Bean" />
->>>>>>> refs/remotes/origin/main
     </div>
-
+    
     <!--contains the wardrobe items that users can select-->
     <div class="wardrobe">
       <div class="grid-item">
-        <img class="cowboyhat" src="images/cowboyhat.png" alt="Cowboy Hat" />
+        <button type="button" id="cowboyhatbtn">
+            <img src="images/cowboyhat.png" alt="Cowboy Hat" />
+        </button>
       </div>
       <div class="grid-item">
+        <button type="button" id="beaniebtn">
         <img class="beanie" src="images/beanie.png" alt="Beanie" />
+    </button>
+    </button>
       </div>
       <div class="grid-item">
+        <button type="button" id="bowbtn">
         <img class="bow" src="images/bow.png" alt="Bow" />
+    </button>
       </div>
       <div class="grid-item">
+        <button type="button" id="bunnybtn">
         <img class="bunny" src="images/bunny.png" alt="Bunny" />
+    </button>
       </div>
       <div class="grid-item">
+        <button type="button" id="necklacebtn">
         <img class="necklace" src="images/necklace.png" alt="necklace" />
+    </button>
       </div>
       <div class="grid-item">
+        <button type="button" id="sockbtn">
         <img class="sock" src="images/sock.png" alt="Sock" />
+    </button>
       </div>
     </div>
   </body>
