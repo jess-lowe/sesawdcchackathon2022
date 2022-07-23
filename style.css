@@ -10,6 +10,7 @@
     width: 250px;
     height: 200px;
     background-color: #5C5C5C;
+    border-radius: 10px;
 }
 
 .bean {
@@ -18,24 +19,22 @@
     height: 200px;
 }
 
-.grid-container {
+.wardrobe {
     display: grid;
-    background-color: #2196F3;
-    gap: 10px;
+    gap: 20px;
     grid-template-columns: auto auto auto;
-    margin-left: 25px;
     width: 250px;
-}
+    margin-left: 25px;
+    margin-top: 20px;
+  }
+  
+  .grid-item {
+    background-color: #5C5C5C;
+    padding: 25px;
+    font-size: 10px;
+    text-align: center;
+    border-radius: 10px;
+  }
 
-.grid-item {
-    background-color: #4cff00;
-    width: 20px;
-    height: 20px;
-    padding: 10px;
-}
 
-.wardrobe{
-    margin-top: 25px;
-    width:250px;
- }
 
