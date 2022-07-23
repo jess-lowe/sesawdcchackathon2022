@@ -1,27 +1,32 @@
-let points = 0;
-let storedPoints = 0;
+// initialise points
+let newPoints = 0;
+let storedPoints;
 
+if (localStorage.getItem('storedPoints') == null) {
+    localStorage.setItem('storedPoints', "0");
+}
 
-function playOrPause() {
-    playStatus = !playStatus;
-    if (playStatus) {
-        //increment timer every second
-        interval = setInterval(function () {
-            console.log(secondsElapsed);
-            secondsElapsed++;
-            points++;
-        }, 1000);
+let interval;
 
-    } else {
-        clearInterval(interval);
-    }
+// get primary video player element
+let video = document.getElementById("primaryVideo");
+
+video.onplay = (event) => {
+    interval = setInterval(function () {
+        console.log(newPoints);
+        newPoints++;
+    }, 1000);
+}
+
+video.onpause = (event) => {
+    clearInterval(interval);
 }
 
 let storePointsInterval = setInterval(storePoints, 10000);
 
 function storePoints() {
-    storedPoints = points + parseInt(localStorage.getItem('storedPoints'));
-    localStorage.setItem('storedPoints', storedPoints.toString);
-    points = 0;
+    storedPoints = newPoints + parseInt(localStorage.getItem('storedPoints'));
+    localStorage.setItem('storedPoints', storedPoints.toString());
+    newPoints = 0;
 }
 
