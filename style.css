@@ -11,29 +11,31 @@
     height: 200px;
     background-color: #5C5C5C;
 }
-<<<<<<< HEAD
-/*.grid-container {
-    display: grid;
-    background-color: #2196F3;
-    gap: 25px;
-    grid-template-columns: auto auto auto;
-    padding: 50px;
-    margin-left: 8vw;
-}
 
-.grid-item {
-    background-color: #4cff00;
-    width: 50px
-    height: 50px;
-}
-=======*/
-
-.bean{
+.bean {
     margin-left: 30px;
     width: 200px;
     height: 200px;
 }
- .grid-container{
-     
+
+.grid-container {
+    display: grid;
+    background-color: #2196F3;
+    gap: 10px;
+    grid-template-columns: auto auto auto;
+    margin-left: 25px;
+    width: 250px;
+}
+
+.grid-item {
+    background-color: #4cff00;
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+}
+
+.wardrobe{
+    margin-top: 25px;
+    width:250px;
  }
->>>>>>> b6d08766e2690d05780aa58a958fadcdfca362bd
+
