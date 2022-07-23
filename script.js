@@ -9,7 +9,7 @@
 
 // unhardcode this tmr
 let wardrobePointUnlocks = {
-    "cowboyhatbtn": 1000,
+    "cowboyhatbtn": 0,
     "beaniebtn": 2000,
     "bowbtn": 3000,
     "bunnybtn": 4000,
@@ -18,14 +18,24 @@ let wardrobePointUnlocks = {
 };
 
 window.onload = function() {
+    // render based on localstorage of unlocks ??
+
     for (const itemId in wardrobePointUnlocks) {
         document.getElementById(itemId).onclick = () => {
+            // if item is locked
             if (document.getElementById(itemId).classList.contains("locked")) {
+                // if user has enough points then unlock item
                 let points = localStorage.getItem('storedPoints');
-                console.log("POOR");
+                console.log("points are" + localStorage.getItem('storedPoints'));
+                if (points >= wardrobePointUnlocks[itemId]) {
+                    document.getElementById(itemId).classList.remove("locked");
+                } else {
+                    console.log("NOT ENOUGH POINTS!");
+                    return;
+                }
             }
 
-            toggleWear(document.getElementById(itemId.slice(0, -3)));
+            toggleWear(document.getElementById(itemId.slice(0, -3)));   // this slice is kinda bad
         }
     }
 
