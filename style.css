@@ -16,6 +16,8 @@
     background-color: #2196F3;
     gap: 25px;
     grid-template-columns: auto auto auto;
+    padding: 50px;
+    margin-left: 8vw;
 }
 
 .grid-item {
