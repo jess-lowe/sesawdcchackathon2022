@@ -1,17 +1,26 @@
-﻿body {
+﻿/* Size of pop up and bg color */
+body {
   width: 300px;
   height: 480px;
   background-color: #1e1e1e;
 }
 
+/* Header text */
 .title {
   color: greenyellow;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
 }
 
+#points {
+  color: white;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Main section */
 .beanBody {
-  margin-top: 50px;
+  margin-top: 3px;
   margin-left: 25px;
   width: 250px;
   height: 200px;
@@ -19,22 +28,13 @@
   border-radius: 10px;
 }
 
+/* Positions bean and shadow */
 .bean {
   margin-left: 30px;
   width: 200px;
   height: 200px;
   position: relative;
   z-index: 1;
-}
-
-.beanBody #cowboyhat, .beanBody #beanie {
-    margin-left: 50px;
-    width: 90px;
-    height: 50px;
-    margin-top: 20px;
-    position: absolute;
-    z-index: 2;
-    display: none;
 }
 
 .beanBody .shadow {
@@ -44,7 +44,17 @@
   margin-left: 60px;
   position: absolute;
   margin-top: 135px;
-  display: none;
+}
+
+/* positions each of the dress up items */
+.beanBody #cowboyhat, .beanBody #beanie {
+    margin-left: 50px;
+    width: 90px;
+    height: 50px;
+    margin-top: 20px;
+    position: absolute;
+    z-index: 2;
+    display: none;
 }
 
 .beanBody #bunny {
@@ -91,6 +101,7 @@
     display: none;
 }
 
+/* creates grid for buttons of the items */
 .wardrobe {
   display: grid;
   gap: 20px;
@@ -114,4 +125,8 @@
   height: 60px;
   margin-top: 5px;
   object-fit: contain;
+}
+
+button:hover{
+  background-color: #0d5001;
 }

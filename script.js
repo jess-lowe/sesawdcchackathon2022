@@ -1,71 +1,36 @@
 // JavaScript source code
 
+const btns = ["cowboyhatbtn", "beaniebtn", "bowbtn", "bunnybtn", "necklacebtn", "sockbtn"];
+
 window.onload = function () {
-    document.getElementById("cowboyhatbtn").onclick = function show() {
-    
-        var x = document.getElementById('cowboyhat');
-        if (x.style.display === "none") {
-            x.style.display = "block";
-         } else {
-            x.style.display = "none";
-        }
-        
-    };
 
-    document.getElementById("beaniebtn").onclick = function show() {
-    
-        var x = document.getElementById('beanie');
-        if (x.style.display === "none") {
-            x.style.display = "block";
-         } else {
-            x.style.display = "none";
-        }
-        
-    };
+    // gets the integer point value
+    var point = document.getElementById("points");
+    const pt = point.textContent.split(" ");
+    point = parseInt(pt[0]);
 
-    document.getElementById("bowbtn").onclick = function show() {
-    
-        var x = document.getElementById('bow');
-        if (x.style.display === "none") {
-            x.style.display = "block";
-         } else {
-            x.style.display = "none";
-        }
-        
-    };
+    // calculates which buttons should be locked based on points
+    for (let i = point / 10; i < btns.length; i++) {
+        document.getElementById(btns[i]).style.backgroundColor = "rgba(0,0,0,.5)";
+        document.getElementById(btns[i]).disabled = true;
+    }
 
-    document.getElementById("bunnybtn").onclick = function show() {
-    
-        var x = document.getElementById('bunny');
-        if (x.style.display === "none") {
-            x.style.display = "block";
-         } else {
-            x.style.display = "none";
-        }
-        
-    };
+    // for each button on click the item appears on bean
+    for (let i = 0; i < btns.length; i++){
+        document.getElementById(btns[i]).onclick = function show() {
 
-    document.getElementById("necklacebtn").onclick = function show() {
-    
-        var x = document.getElementById('necklace');
-        if (x.style.display === "none") {
-            x.style.display = "block";
-         } else {
-            x.style.display = "none";
-        }
-        
-    };
+            pos = btns[i].search("btn");
+            item = btns[i].slice(0, pos);
+            var x = document.getElementById(item);
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
 
-    document.getElementById("sockbtn").onclick = function show() {
+        };
+    }
     
-        var x = document.getElementById('sock');
-        if (x.style.display === "none") {
-            x.style.display = "block";
-         } else {
-            x.style.display = "none";
-        }
-        
-    };
 }
 
 
