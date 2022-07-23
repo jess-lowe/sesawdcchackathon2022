@@ -21,7 +21,7 @@
     z-index: 1;
 }
 
-.beanBody .cowboyhat {
+.beanBody .cowboyhat, .beanBody .beanie {
     margin-left: 50px;
     width: 90px;
     height: 50px;
@@ -29,6 +29,43 @@
     position: absolute;
     z-index: 2;
     
+}
+
+.beanBody .bunny {
+    margin-left: 69px;
+    width: 60px;
+    height: 50px;
+    margin-top: 12px;
+    position: absolute;
+    z-index: 2;
+    
+}
+
+.beanBody .bow {
+    margin-left: 65px;
+    width: 90px;
+    height: 50px;
+    margin-top: 80px;
+    position: absolute;
+    z-index: 2;
+}
+
+.beanBody .necklace {
+    margin-left: 62px;
+    width: 90px;
+    height: 50px;
+    margin-top: 85px;
+    position: absolute;
+    z-index: 2;
+}
+
+.beanBody .sock {
+    margin-left: 100px;
+    width: 150px;
+    height: 130px;
+    margin-top: 85px;
+    position: absolute;
+    z-index: 2;
 }
 
 .wardrobe {
