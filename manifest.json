@@ -6,14 +6,14 @@
 
   "browser_action": {
     "default_popup": "index.html",
-    "default_icon": "images/icon1.png"
+    "default_icon": "images/screenbean_logo.png"
   },
 
   "permissions": ["storage"],
 
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
+      "matches": ["https://auckland.au.panopto.com/*"],
       "js": ["content-script.js"]
     }
   ]
