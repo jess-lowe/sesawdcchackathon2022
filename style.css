@@ -5,18 +5,36 @@
 }
 
 .beanBody{
-    margin-top: 10vh;
-    margin-left: 8vw;
+    margin-top: 50px;
+    margin-left: 25px;
     width: 250px;
     height: 200px;
     background-color: #5C5C5C;
+    border-radius: 10px;
 }
 
-.bean{
+.bean {
     margin-left: 30px;
     width: 200px;
     height: 200px;
 }
- .grid-container{
-     
- }
+
+.wardrobe {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: auto auto auto;
+    width: 250px;
+    margin-left: 25px;
+    margin-top: 20px;
+  }
+  
+  .grid-item {
+    background-color: #5C5C5C;
+    padding: 25px;
+    font-size: 10px;
+    text-align: center;
+    border-radius: 10px;
+  }
+
+
+
