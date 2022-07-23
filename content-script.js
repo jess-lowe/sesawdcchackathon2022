@@ -1,7 +1,7 @@
 let playButton = document.getElementById("playButton");
 let playButtonClicksCounter = 0;
 let interval;
-let secondsElapsed;
+let secondsElapsed = 0;
 let playStatus = true;
 let timer = 0;
 playButton.addEventListener("click", playOrPause);
@@ -26,12 +26,11 @@ function playOrPause() {
     if (playStatus) {
         //increment timer every second
         interval = setInterval(function () {
-            console.log("ouio");
+            console.log(secondsElapsed);
             secondsElapsed++;
         }, 1000);
 
     } else {
         clearInterval(interval);
     }
-
 }
