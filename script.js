@@ -4,7 +4,7 @@ window.onload = function () {
 
     accessoryArray['cowboyhat', 'beanie', 'bow', 'bunny', 'necklace', 'sock'];
 
-    // if not null get prev saved state - load all trues
+    // get prev saved state - load all trues
     for (accessory of accessoryArray) {
         accessoryState = chrome.storage.sync.get([accessory], function (result) {
             console.log('Value ' + accessory + result.accessory);
@@ -23,10 +23,12 @@ window.onload = function () {
         var x = document.getElementById('cowboyhat');
         if (x.style.display === "none") {
             x.style.display = "block";
+            state = true;
         } else {
             x.style.display = "none";
+            state = false;
         }
-        //save state
+        saveBeanState('cowboyhat', state);
     };
 
     document.getElementById("beaniebtn").onclick = function show() {
@@ -34,9 +36,12 @@ window.onload = function () {
         var x = document.getElementById('beanie');
         if (x.style.display === "none") {
             x.style.display = "block";
+            state = true;
         } else {
             x.style.display = "none";
+            state = false;
         }
+        saveBeanState('beanie', state);
 
     };
 
@@ -45,9 +50,12 @@ window.onload = function () {
         var x = document.getElementById('bow');
         if (x.style.display === "none") {
             x.style.display = "block";
+            state = true;
         } else {
             x.style.display = "none";
+            state = false;
         }
+        saveBeanState('bow', state);
 
     };
 
@@ -56,9 +64,12 @@ window.onload = function () {
         var x = document.getElementById('bunny');
         if (x.style.display === "none") {
             x.style.display = "block";
+            state = true;
         } else {
             x.style.display = "none";
+            state = false;
         }
+        saveBeanState('bunny', state);
 
     };
 
@@ -67,29 +78,35 @@ window.onload = function () {
         var x = document.getElementById('necklace');
         if (x.style.display === "none") {
             x.style.display = "block";
+            state = true;
         } else {
             x.style.display = "none";
+            state = false;
         }
+        saveBeanState('necklace', state);
 
     };
 
     document.getElementById("sockbtn").onclick = function show() {
 
+        var state;
         var x = document.getElementById('sock');
         if (x.style.display === "none") {
             x.style.display = "block";
+            state = true;
         } else {
             x.style.display = "none";
+            state = false;
         }
+        saveBeanState('sock', state);
 
     };
 }
 
 // save state of bean on click
-function saveBeanState() {
-    if 
-    chrome.storage.sync.set({ key: value }, function () {
-        console.log('Value is set to ' + value);
+function saveBeanState(accessory, state) {
+    chrome.storage.sync.set({ accessory: state }, function () {
+        console.log(accessory + ' is set to ' + state);
     });
 }
 
