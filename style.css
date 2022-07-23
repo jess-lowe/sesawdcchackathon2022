@@ -1,60 +1,102 @@
 ﻿body {
-    width: 300px;
-    height: 400px;
-    background-color: #1E1E1E;
+  width: 300px;
+  height: 400px;
+  background-color: #1e1e1e;
 }
 
-.beanBody{
-    margin-top: 50px;
-    margin-left: 25px;
-    width: 250px;
-    height: 200px;
-    background-color: #5C5C5C;
-    border-radius: 10px;
+.beanBody {
+  margin-top: 50px;
+  margin-left: 25px;
+  width: 250px;
+  height: 200px;
+  background-color: #5c5c5c;
+  border-radius: 10px;
 }
 
 .bean {
-    margin-left: 30px;
-    width: 200px;
-    height: 200px;
-    position: relative;
-    z-index: 1;
+  margin-left: 30px;
+  width: 200px;
+  height: 200px;
+  position: relative;
+  z-index: 1;
 }
 
-.beanBody .cowboyhat {
-    margin-left: 50px;
-    width: 90px;
-    height: 50px;
-    margin-top: 20px;
-    position: absolute;
-    z-index: 2;
-    
+.beanBody .cowboyhat,
+.beanBody .beanie {
+  margin-left: 50px;
+  width: 90px;
+  height: 50px;
+  margin-top: 20px;
+  position: absolute;
+  z-index: 2;
+}
+
+.beanBody .shadow {
+  width: 100px;
+  height: auto;
+  display: block;
+  margin-left: 60px;
+  position: absolute;
+  margin-top: 135px;
+}
+
+.beanBody .bunny {
+  margin-left: 69px;
+  width: 60px;
+  height: 50px;
+  margin-top: 12px;
+  position: absolute;
+  z-index: 2;
+}
+
+.beanBody .bow {
+  margin-left: 65px;
+  width: 90px;
+  height: 50px;
+  margin-top: 80px;
+  position: absolute;
+  z-index: 2;
+}
+
+.beanBody .necklace {
+  margin-left: 62px;
+  width: 90px;
+  height: 50px;
+  margin-top: 85px;
+  position: absolute;
+  z-index: 2;
+}
+
+.beanBody .sock {
+  margin-left: 100px;
+  width: 150px;
+  height: 130px;
+  margin-top: 85px;
+  position: absolute;
+  z-index: 2;
 }
 
 .wardrobe {
-    display: grid;
-    gap: 20px;
-    grid-template-columns: auto auto auto;
-    width: 250px;
-    margin-left: 25px;
-    margin-top: 20px;
-  }
-  
-  .grid-item {
-    background-color: #5C5C5C;
-    width: 70px;
-    height: 70px;
-    font-size: 10px;
-    text-align: center;
-    border-radius: 10px;
-  }
+  display: grid;
+  gap: 20px;
+  grid-template-columns: auto auto auto;
+  width: 250px;
+  margin-left: 25px;
+  margin-top: 20px;
+}
 
-  .grid-item img {
-    width: 60px;
-    height: 60px;
-    margin-top: 5px;
-    object-fit: contain;  
-  }
+.grid-item {
+  background-color: #5c5c5c;
+  width: 70px;
+  height: 70px;
+  font-size: 10px;
+  text-align: center;
+  border-radius: 10px;
+}
 
-
-
+.grid-item img {
+  width: 60px;
+  height: 60px;
+  margin-top: 5px;
+  object-fit: contain;
+}
