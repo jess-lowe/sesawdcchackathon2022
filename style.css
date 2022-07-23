@@ -1,15 +1,21 @@
 ﻿body {
     width: 300px;
-    height: 600px;
+    height: 400px;
     background-color: #1E1E1E;
 }
 
 .beanBody{
     margin-top: 10vh;
     margin-left: 8vw;
-    width: 400px;
-    height: 400px;
+    width: 250px;
+    height: 200px;
     background-color: #5C5C5C;
+}
+
+.bean{
+    margin-left: 30px;
+    width: 200px;
+    height: 200px;
 }
  .grid-container{
      
