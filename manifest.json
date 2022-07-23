@@ -2,9 +2,9 @@
     "name":"Screen Bean",
     "description":"Make watching lectures fun again",
     "version":"1.0",
-    "manifest_version":3,
-    
+    "manifest_version":3
+
     "browser_action":{
         "default_popup":"index.html"
-    },
+    }
 }
