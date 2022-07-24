@@ -1,12 +1,5 @@
 // JavaScript source code
 
-// NB: js "style" attribute != css file - use class instead for e.g. ".lock"
-
-// // if no item
-// if (localStorage.getItem('storedPoints') == null) {
-//     localStorage.setItem('storedPoints', "0");
-// }
-
 // unhardcode this tmr
 let wardrobePointUnlocks = {
   cowboyhatbtn: 0,
@@ -24,60 +17,56 @@ let wardrobePointUnlocks = {
 };
 
 window.onload = function () {
-  // render based on localstorage of unlocks ??
+//   display points based on chrome storage
+    chrome.storage.local.get(['storedPoints'], function (result) {
+        console.log("here stored points are: " + result.storedPoints);
+        document.getElementById("points").innerHTML = (result.storedPoints) + " Points";
+        console.log("THIS PART" + document.getElementById("points").innerHTML);
+        unlocks();
+    });
 
-    for (const itemId in wardrobePointUnlocks) {
-        document.getElementById(itemId).onclick = () => {
-            // if item is locked
-            if (document.getElementById(itemId).classList.contains("locked")) {
-                // if user has enough points then unlock item
-                var point = document.getElementById("points");
-                const pt = point.textContent.split(" ");
-                points = parseInt(pt[0]);
-                console.log("points are" + localStorage.getItem('storedPoints'));
-                if (points >= wardrobePointUnlocks[itemId]) {
-                    document.getElementById(itemId).classList.remove("locked");
-                } else {
-                    console.log("NOT ENOUGH POINTS!");
-                    return;
-                }
+    function unlocks() {
+        for (const itemId in wardrobePointUnlocks) {
+
+            // get points
+            var point = document.getElementById("points");    // points text
+            console.log("point innerhtml is + " + point.innerHTML);
+            const pt = point.textContent.split(" ");
+            points = parseInt(pt[0]);
+
+            // initial render
+            if (points >= wardrobePointUnlocks[itemId]) {
+                document.getElementById(itemId).classList.remove("locked");
             }
 
-            toggleWear(document.getElementById(itemId.slice(0, -3)));   // this slice is kinda bad
+            // onclick event
+            document.getElementById(itemId).onclick = () => {
+                // if item is locked
+                if (document.getElementById(itemId).classList.contains("locked")) {
+                    // if user has enough points then unlock item
+                    if (points >= wardrobePointUnlocks[itemId]) {
+                        document.getElementById(itemId).classList.remove("locked");
+                    } else {
+                        console.log("we are returning because points are " + points)
+                        return; // if not  enough points then do nothing
+                    }
+                }
+
+                // toggle wear if item was unlocked or has now been unlocked
+                console.log("about to togglewear")
+                toggleWear(document.getElementById(itemId.slice(0, -3)));
+            }
         }
-    }
-
-    let pointsInterval = setInterval(displayPoints, 10000);
-
-    function displayPoints(){
-        chrome.storage.local.get(['storedPoints'], function (result) {
-            console.log('Value currently is ' + result.storedPoints);
-            document.getElementById("points").innerHTML = result.storedPoints + " Points";
-
-        });
     }
     
     function toggleWear(element) {
         if (element.classList.contains("hidden")) {
             element.classList.remove("hidden");
         } else {
-          console.log("NOT ENOUGH POINTS!");
-          return;
+            element.classList.add("hidden");
         }
       }
-
-      toggleWear(document.getElementById(itemId.slice(0, -3))); // this slice is kinda bad
     };
-  
-
-  function toggleWear(element) {
-    if (element.classList.contains("hidden")) {
-      element.classList.remove("hidden");
-    } else {
-      element.classList.add("hidden");
-    }
-    console.log(element);
-  }
 
   // changes bean to mr bean after 10 clicks on the bean
   let bean = document.getElementById("bean");

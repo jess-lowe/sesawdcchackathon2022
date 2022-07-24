@@ -1,5 +1,5 @@
 let newSeconds = 0;
-let pointsFactor = 1;  // calculation: total seconds / pointsFactor = points
+let pointsFactor = 0.01;  // calculation: total seconds / pointsFactor = points
 
 
 // get primary video player element
