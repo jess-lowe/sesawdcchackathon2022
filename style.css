@@ -213,8 +213,8 @@ button {
 }
 .svgBean{
   width:100px;
-  margin-left: 60px;
-  margin-top: 50px;
+  margin-left: 65px;
+  margin-top: 40px;
 }
 #svgcontainer,
 #controls {
@@ -367,7 +367,7 @@ button {
   top: 6px;
   width: 60px;
   height: 27px;
-  background: #F00;
+  background: rgb(0, 255, 47);
   border: 1px solid #8F8F8F;
 }
 

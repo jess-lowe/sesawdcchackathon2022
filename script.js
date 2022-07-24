@@ -122,7 +122,7 @@ $(document).ready(function () {
 
     var current = {
         'picker': "#bgpicker",
-        'color': "#F00",
+        'color': "rgb(0, 255, 47)",
         'graphic': "#bean"
     };
 
@@ -137,7 +137,7 @@ $(document).ready(function () {
         onSubmit: function (hsb, hex, rgb, el) {
             $(el).colpickHide();
         }
-    }).css('background-color', "#F00");
+    }).css('background-color', "rgb(0, 255, 47)");
 
     function rgb2hex(rgb) {
         rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
