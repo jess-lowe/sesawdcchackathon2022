@@ -90,7 +90,7 @@
 
 .beanBody #bow {
   margin-left: 65px;
-  width: 90px;
+  width: 80px;
   height: 50px;
   margin-top: 80px;
   position: absolute;
@@ -113,6 +113,59 @@
   margin-top: 85px;
   position: absolute;
   z-index: 2;
+}
+
+.beanBody #duck {
+  margin-left: 55px;
+  width: 150px;
+  height: 130px;
+  margin-top: 50px;
+  position: absolute;
+  z-index: 2;
+}
+
+.beanBody #sunglasses {
+  margin-left: 65px;
+  width: 60px;
+  height: 22px;
+  margin-top: 68px;
+  position: absolute;
+  z-index: 2;
+}
+
+.beanBody #tophat {
+  margin-left: 65px;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  z-index: 2;
+}
+
+.beanBody #flower {
+  margin-left: 58px;
+  width: 75px;
+  height: 45px;
+  margin-top: 20px;
+  position: absolute;
+  z-index: 2;
+}
+
+.beanBody #scarf {
+  margin-left: 62px;
+  width: 100px;
+  height: 50px;
+  margin-top: 85px;
+  position: absolute;
+  z-index: 2;
+}
+
+.beanBody #butterfly {
+  margin-left: 25px;
+  width: 150px;
+  height: 130px;
+  margin-top: 25px;
+  position: absolute;
+  z-index: 1;
 }
 
 #wardrobe {
