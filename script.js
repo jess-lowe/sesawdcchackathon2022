@@ -145,6 +145,7 @@ $(document).ready(function(){
 
     $("#bgpicker").colpick({
         color: "#F00",
+        layout: "rgbhex",
         onChange: function (hsb, hex, rgb, el, bySetColor) {
             var newColor = '#' + hex;
             $("#bean").css("fill", newColor);

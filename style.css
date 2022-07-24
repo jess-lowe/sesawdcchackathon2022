@@ -151,7 +151,9 @@ button {
 }
 
 
-
+.bgpicker{
+  padding-left:10px;
+}
 .eye {
   fill: #fff;
   stroke-width: 1px;
@@ -169,6 +171,7 @@ button {
 
 .colpick {
   position: absolute;
+  left: 0!important;
   width: 346px;
   height: 170px;
   overflow: hidden;
