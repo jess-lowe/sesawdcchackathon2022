@@ -125,10 +125,7 @@ window.onload = function () {
   });
 
 
-<<<<<<< HEAD
-$(document).ready(function(){
-=======
->>>>>>> 3f167ff7c9ff10033b28ab69bbb5a4d48f24995a
+
     var current = {
         'picker': "#bgpicker",
         'color': "#F00",
