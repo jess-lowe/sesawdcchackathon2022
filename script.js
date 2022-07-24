@@ -67,6 +67,19 @@ window.onload = function () {
             }
         }
 
+        let pointsInterval = setInterval(displayPoints, 10000);
+
+        function displayPoints() {
+            document.getElementById("points").innerHTML = localStorage.getItem('storedPoints') + " Points";
+            console.log("hi" + document.getElementById("points"));
+            console.log("points are" + localStorage.getItem('storedPoints'));
+            chrome.storage.local.get(['storedPoints'], function (result) {
+                console.log('Value currently is ' + result.storedPoints);
+                document.getElementById("points").innerHTML = result.storedPoints + " Points";
+                window.location.reload();
+            });
+        }
+
         document.getElementById("dot1").onclick = function slide1() {
             let slides1 = document.getElementById("firstSlide");
             let slides2 = document.getElementById("secondSlide");
