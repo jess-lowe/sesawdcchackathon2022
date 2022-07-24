@@ -1,10 +1,6 @@
 let newSeconds = 0;
 let pointsFactor = 1;  // calculation: total seconds / pointsFactor = points
 
-// if no existing points exist, set storedPoints to be 0
-if (localStorage.getItem('storedPoints') == null) {
-    localStorage.setItem('storedPoints', "0");
-}
 
 // get primary video player element
 let video = document.getElementById("primaryVideo");
@@ -36,8 +32,16 @@ function storePoints() {
 
     // if at least 1 accumulated, update storage and reset newSeconds
     if (newPoints > 0) {
-        let storedPoints = newPoints + parseInt(localStorage.getItem('storedPoints'));
-        localStorage.setItem('storedPoints', storedPoints.toString());
+        chrome.storage.local.get(['storedPoints'], function (result) {
+            console.log('Value currently is ' + result.storedPoints);
+
+            let storedPoints = newPoints + parseInt(result.storedPoints || 0);
+
+            chrome.storage.local.set({ storedPoints: storedPoints.toString() }, function () {
+                console.log('Value is set to ' + storedPoints.toString());
+            });
+        });
+        
         newSeconds = 0;
         // call update points display
     }
