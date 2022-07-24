@@ -25,41 +25,15 @@
   border-radius: 10px;
 }
 
-<<<<<<< HEAD
 .bean {
   fill:#F00;
-=======
-#bean {
->>>>>>> c02ada9b2ea53e7ac2c776b1ead0e6a07b7bec0c
   margin-left: 30px;
   width: 200px;
   height: 200px;
   position: relative;
   z-index: 1;
-<<<<<<< HEAD
   stroke-miterlimit: 10;
   stroke-width: 3px;
-=======
-  display: block;
-}
-
-#mrbean {
-  margin-left: 50px;
-  width: 120px;
-  height: 190px;
-  position: relative;
-  z-index: 1;
-  display: none;
-}
-
-.beanBody #shadow {
-  width: 100px;
-  height: auto;
-  display: block;
-  margin-left: 60px;
-  position: absolute;
-  margin-top: 135px;
->>>>>>> c02ada9b2ea53e7ac2c776b1ead0e6a07b7bec0c
 }
 
 .locked {
@@ -204,7 +178,6 @@ button {
   margin-top: 5px;
   object-fit: contain;
 }
-<<<<<<< HEAD
 
 .svgBean{
   width:100px;
@@ -675,5 +648,3 @@ button {
   background-color: #101010;
   border-color: #444;
 }
-=======
->>>>>>> c02ada9b2ea53e7ac2c776b1ead0e6a07b7bec0c
