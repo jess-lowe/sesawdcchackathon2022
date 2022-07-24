@@ -16,8 +16,24 @@ let wardrobePointUnlocks = {
     butterflybtn: 6000,
 };
 
+const defaultAccessories = {
+    'cowboyhat': false,
+    'beanie': false,
+    'bow': false,
+    'bunny': false,
+    'necklace': false,
+    'sock': false,
+    'duck': false,
+    'sunglasses': false,
+    'tophat': false,
+    'flower': false,
+    'scarf': false,
+    'butterfly': false
+}
+
+
 window.onload = function () {
-    //   display points based on chrome storage
+    /*********************   display points based on chrome storage */
     chrome.storage.local.get(['storedPoints'], function (result) {
         console.log("here stored points are: " + result.storedPoints);
         document.getElementById("points").innerHTML = (result.storedPoints || 0) + " Points";
@@ -32,7 +48,7 @@ window.onload = function () {
             var point = document.getElementById("points");    // points text
             console.log("point innerhtml is + " + point.innerHTML);
             const pt = point.textContent.split(" ");
-            points = parseInt(pt[0]);
+            const points = parseInt(pt[0]);
 
             // initial render
             if (points >= wardrobePointUnlocks[itemId]) {
@@ -41,6 +57,11 @@ window.onload = function () {
 
             // onclick event
             document.getElementById(itemId).onclick = () => {
+                var point = document.getElementById("points");    // points text
+                console.log("point innerhtml is + " + point.innerHTML);
+                const pt = point.textContent.split(" ");
+                const points = parseInt(pt[0]);
+
                 // if item is locked
                 if (document.getElementById(itemId).classList.contains("locked")) {
                     // if user has enough points then unlock item
@@ -62,8 +83,10 @@ window.onload = function () {
         function toggleWear(element) {
             if (element.classList.contains("hidden")) {
                 element.classList.remove("hidden");
+                saveBeanState(element, true);
             } else {
                 element.classList.add("hidden");
+                saveBeanState(element, false);
             }
         }
 
@@ -76,7 +99,7 @@ window.onload = function () {
             chrome.storage.local.get(['storedPoints'], function (result) {
                 console.log('Value currently is ' + result.storedPoints);
                 document.getElementById("points").innerHTML = result.storedPoints + " Points";
-                window.location.reload();
+                // window.location.reload();
             });
         }
 
@@ -107,6 +130,34 @@ window.onload = function () {
         }
     }
 };
+
+/************** accessories save */
+chrome.storage.local.get(['accessories'], (result) => {
+    if (!result.accessories) {
+        chrome.storage.local.set({ "accessories": defaultAccessories }, () => {
+            console.log("initialising accessories!");
+        });
+    } else {
+        for (const accessory in result.accessories) {
+            // if it's worn, remove the default hidden class
+            if (result.accessories[accessory]) {
+                document.getElementById(accessory).classList.remove("hidden");
+            }
+        }
+    }
+})
+
+// save state of bean on click
+function saveBeanState(accessory, state) {
+    chrome.storage.local.get(['accessories'], (result) => {
+        let currentAccessories = result.accessories;
+        currentAccessories[accessory] = state;
+        chrome.storage.local.set({ "accessories": currentAccessories }, () => {
+            console.log("saved bean state");
+        })
+    })
+}
+
 
 $(document).ready(function () {
     // changes bean to mr bean after 10 clicks on the bean
