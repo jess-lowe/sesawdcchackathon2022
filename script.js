@@ -138,10 +138,13 @@ chrome.storage.local.get(['accessories'], (result) => {
             console.log("initialising accessories!");
         });
     } else {
-        for (const accessory in result.accessories) {
+        console.log(result.accessories);
+        for (const acc in result.accessories) {
             // if it's worn, remove the default hidden class
-            if (result.accessories[accessory]) {
-                document.getElementById(accessory).classList.remove("hidden");
+            console.log("bout to log aceceseruo");
+            console.log(acc);
+            if (result.accessories[acc]) {
+                document.getElementById(acc).classList.remove("hidden");
             }
         }
     }
@@ -151,7 +154,7 @@ chrome.storage.local.get(['accessories'], (result) => {
 function saveBeanState(accessory, state) {
     chrome.storage.local.get(['accessories'], (result) => {
         let currentAccessories = result.accessories;
-        currentAccessories[accessory] = state;
+        currentAccessories[accessory.id] = state;
         chrome.storage.local.set({ "accessories": currentAccessories }, () => {
             console.log("saved bean state");
         })
