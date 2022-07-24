@@ -20,7 +20,7 @@ window.onload = function () {
     //   display points based on chrome storage
     chrome.storage.local.get(['storedPoints'], function (result) {
         console.log("here stored points are: " + result.storedPoints);
-        document.getElementById("points").innerHTML = (result.storedPoints) + " Points";
+        document.getElementById("points").innerHTML = (result.storedPoints || 0) + " Points";
         console.log("THIS PART" + document.getElementById("points").innerHTML);
         unlocks();
     });
