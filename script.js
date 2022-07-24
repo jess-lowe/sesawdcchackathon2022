@@ -79,30 +79,30 @@ window.onload = function () {
     console.log(element);
   }
 
-
+  $(document).ready(function(){
   // changes bean to mr bean after 10 clicks on the bean
-  let bean = document.getElementById("bean");
+  let mrbean = document.getElementById("bean");
 
   let count = 0;
 
-  bean.addEventListener("click", function () {
+  mrbean.addEventListener("click", function () {
     count += 1;
 
     if (count == 10) {
-      bean.style.display = "none";
+      mrbean.style.display = "none";
       document.getElementById("mrbean").style.display = "block";
       document.getElementById("shadow").style.display = "none";
     }
   });
-
+  
   document.getElementById("mrbean").addEventListener("click", function () {
-    bean.style.display = "block";
+    mrbean.style.display = "block";
     document.getElementById("mrbean").style.display = "none";
     document.getElementById("shadow").style.display = "block";
     count = 0;
   });
 
-$(document).ready(function(){
+
     var current = {
         'picker': "#bgpicker",
         'color': "#F00",
