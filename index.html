@@ -5,62 +5,123 @@
     <meta charset="utf-8" />
     <title>SCREENBEAN</title>
     <link rel="stylesheet" href="style.css" />
-    <script src = "script.js"></script>
+    <script src="script.js"></script>
   </head>
   <body>
-
-     <!-- contains the top text -->
-     <div>
-        <h1 class="title">ScreenBean</h1>
-        <h2 id="points">0 Points</h2>
-      </div>
-    
-    <!-- contains the bean's body with will be dressed up' -->
-    <div class="beanBody"> 
-        <img id="cowboyhat" class="hidden" src="images/cowboyhat.png" alt="Cowboy Hat">
-        <img id="beanie" class="hidden" src="images/beanie.png" alt="Beanie">
-        <img id="bow" class="hidden" src="images/bow.png" alt="Bow">
-        <img id="bunny" class="hidden" src="images/bunny.png" alt="Bunny">
-        <img id= "necklace" class="hidden" src="images/necklace.png" alt="necklace">
-        <img id="sock" class="hidden" src="images/sock.png" alt="Sock">
-
-        <img id="shadow" src="images/shadow.png" alt="Shadow" />
-        <img id="bean" src="images/bean.png" alt="Bean">
-        <img id="mrbean" src="images/mrbean.png" alt="MrBean">
+    <!-- contains the top text -->
+    <div>
+      <h1 class="title">ScreenBean</h1>
+      <h2 id="points">0 Points</h2>
     </div>
-    
+
+    <!-- contains the bean's body with will be dressed up' -->
+    <div class="beanBody">
+      <img
+        id="cowboyhat"
+        class="hidden"
+        src="images/cowboyhat.png"
+        alt="Cowboy Hat"
+      />
+      <img id="beanie" class="hidden" src="images/beanie.png" alt="Beanie" />
+      <img id="bow" class="hidden" src="images/bow.png" alt="Bow" />
+      <img id="bunny" class="hidden" src="images/bunny.png" alt="Bunny" />
+      <img
+        id="necklace"
+        class="hidden"
+        src="images/necklace.png"
+        alt="necklace"
+      />
+      <img id="sock" class="hidden" src="images/sock.png" alt="Sock" />
+
+      <img id="duck" class="hidden" src="images/duck.png" alt="Duck" />
+      <img
+        id="sunglasses"
+        class="hidden"
+        src="images/sunglasses.png"
+        alt="sunglasses"
+      />
+      <img id="tophat" class="hidden" src="images/tophat.png" alt="Tophat" />
+      <img id="flower" class="hidden" src="images/flower.png" alt="Flower" />
+      <img id="scarf" class="hidden" src="images/scarf.png" alt="Scarf" />
+      <img
+        id="butterfly"
+        class="hidden"
+        src="images/butterfly.png"
+        alt="Butterfly"
+      />
+
+      <img id="shadow" src="images/shadow.png" alt="Shadow" />
+      <img id="bean" src="images/bean.png" alt="Bean" />
+      <img id="mrbean" src="images/mrbean.png" alt="MrBean" />
+    </div>
+
     <!--contains the wardrobe items that users can select-->
     <div id="wardrobe">
       <div class="grid-item">
         <button type="button" id="cowboyhatbtn" class="locked">
-            <img src="images/cowboyhat.png" alt="Cowboy Hat" />
+          <img class="cowboyhat" src="images/cowboyhat.png" alt="Cowboy Hat" />
         </button>
       </div>
       <div class="grid-item">
         <button type="button" id="beaniebtn" class="locked">
-        <img class="beanie" src="images/beanie.png" alt="Beanie" />
-    </button>
-    </button>
+          <img class="beanie" src="images/beanie.png" alt="Beanie" />
+        </button>
       </div>
       <div class="grid-item">
         <button type="button" id="bowbtn" class="locked">
-        <img class="bow" src="images/bow.png" alt="Bow" />
-    </button>
+          <img class="bow" src="images/bow.png" alt="Bow" />
+        </button>
       </div>
       <div class="grid-item">
         <button type="button" id="bunnybtn" class="locked">
-        <img class="bunny" src="images/bunny.png" alt="Bunny" />
-    </button>
+          <img class="bunny" src="images/bunny.png" alt="Bunny" />
+        </button>
       </div>
       <div class="grid-item">
         <button type="button" id="necklacebtn" class="locked">
-        <img class="necklace" src="images/necklace.png" alt="necklace" />
-    </button>
+          <img class="necklace" src="images/necklace.png" alt="Necklace" />
+        </button>
       </div>
       <div class="grid-item">
         <button type="button" id="sockbtn" class="locked">
-        <img class="sock" src="images/sock.png" alt="Sock" />
-    </button>
+          <img class="sock" src="images/sock.png" alt="Sock" />
+        </button>
+      </div>
+
+      <!--contains the second slide of wardrobe items-->
+      <div class="grid-item">
+        <button type="button" id="duckbtn" class="locked">
+          <img class="duck" src="images/duck.png" alt="Duck" />
+        </button>
+      </div>
+      <div class="grid-item">
+        <button type="button" id="sunglassesbtn" class="locked">
+          <img
+            class="sunglasses"
+            src="images/sunglasses.png"
+            alt="Sunglasses"
+          />
+        </button>
+      </div>
+      <div class="grid-item">
+        <button type="button" id="tophatbtn" class="locked">
+          <img class="tophat" src="images/tophat.png" alt="Tophat" />
+        </button>
+      </div>
+      <div class="grid-item">
+        <button type="button" id="flowerbtn" class="locked">
+          <img class="flower" src="images/flower.png" alt="Flower" />
+        </button>
+      </div>
+      <div class="grid-item">
+        <button type="button" id="scarfbtn" class="locked">
+          <img class="scarf" src="images/scarf.png" alt="Scarf" />
+        </button>
+      </div>
+      <div class="grid-item">
+        <button type="button" id="butterflybtn" class="locked">
+          <img class="butterfly" src="images/butterfly.png" alt="Butterfly" />
+        </button>
       </div>
     </div>
 
