@@ -24,6 +24,31 @@ let wardrobePointUnlocks = {
 };
 
 window.onload = function () {
+    document.getElementById("dot1").onclick = function slide1() {
+        let slides1 = document.getElementById("firstSlide");
+        let slides2 = document.getElementById("secondSlide");
+        let dots1 = document.getElementById("dot1");
+        let dots2 = document.getElementById("dot2");
+
+        slides2.classList.add("hideItem");
+        dots2.className = dots1.className.replace(" active", "");
+
+        slides1.classList.remove("hideItem");
+        dots1.className += " active";
+    }
+
+    document.getElementById("dot2").onclick = function slide2() {
+        let slides1 = document.getElementById("firstSlide");
+        let slides2 = document.getElementById("secondSlide");
+        let dots1 = document.getElementById("dot1");
+        let dots2 = document.getElementById("dot2");
+
+        slides1.classList.add("hideItem");
+        dots1.className = dots1.className.replace(" active", "");
+
+        slides2.classList.remove("hideItem");
+        dots2.className += " active";
+    }
   // render based on localstorage of unlocks ??
 
     for (const itemId in wardrobePointUnlocks) {
@@ -100,4 +125,6 @@ window.onload = function () {
     document.getElementById("shadow").style.display = "block";
     count = 0;
   });
+
+
 
