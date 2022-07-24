@@ -26,25 +26,23 @@ let wardrobePointUnlocks = {
 window.onload = function () {
   // render based on localstorage of unlocks ??
 
-    for (const itemId in wardrobePointUnlocks) {
-        document.getElementById(itemId).onclick = () => {
-            // if item is locked
-            if (document.getElementById(itemId).classList.contains("locked")) {
-                // if user has enough points then unlock item
-                var point = document.getElementById("points");
-                const pt = point.textContent.split(" ");
-                points = parseInt(pt[0]);
-                console.log("points are" + localStorage.getItem('storedPoints'));
-                if (points >= wardrobePointUnlocks[itemId]) {
-                    document.getElementById(itemId).classList.remove("locked");
-                } else {
-                    console.log("NOT ENOUGH POINTS!");
-                    return;
-                }
+  for (const itemId in wardrobePointUnlocks) {
+    document.getElementById(itemId).onclick = () => {
+        // if item is locked
+        if (document.getElementById(itemId).classList.contains("locked")) {
+            // if user has enough points then unlock item
+            let points = localStorage.getItem('storedPoints');
+            console.log("points are" + localStorage.getItem('storedPoints'));
+            if (points >= wardrobePointUnlocks[itemId]) {
+                document.getElementById(itemId).classList.remove("locked");
+            } else {
+                console.log("NOT ENOUGH POINTS!");
+                return;
             }
-
-            toggleWear(document.getElementById(itemId.slice(0, -3)));   // this slice is kinda bad
         }
+
+        toggleWear(document.getElementById(itemId.slice(0, -3)));   // this slice is kinda bad
+    }
     }
 
     let pointsInterval = setInterval(displayPoints, 10000);
@@ -66,7 +64,6 @@ window.onload = function () {
         }
       }
 
-      toggleWear(document.getElementById(itemId.slice(0, -3))); // this slice is kinda bad
     };
   
 
